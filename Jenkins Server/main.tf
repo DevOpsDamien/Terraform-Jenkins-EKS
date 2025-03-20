@@ -1,6 +1,7 @@
 # VPC
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
+  ami    = data.aws_ami.latest_amazon_linux.id
 
   name = "jenkins-vpc"
   cidr = var.vpc_cidr
